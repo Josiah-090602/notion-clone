@@ -18,7 +18,7 @@ function SidebarLinks({ href, id }: { href: string; id: string }) {
         variant={isActive ? "secondary" : "ghost"}
         className="w-full text-accent-foreground"
       >
-        <p>{data.title || "Untitled Document"}</p>
+        <p className="truncate">{data.title || "Untitled Document"}</p>
       </Button>
     </Link>
   );
