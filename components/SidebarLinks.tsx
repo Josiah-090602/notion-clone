@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 function SidebarLinks({ href, id }: { href: string; id: string }) {
   const pathname = usePathname();
   const isActive = href.includes(pathname) && pathname !== "/";
-  const [data, loading, error] = useDocumentData(doc(db, "documents", id));
+  const [data] = useDocumentData(doc(db, "documents", id));
 
   if (!data) return null;
 
@@ -16,7 +16,7 @@ function SidebarLinks({ href, id }: { href: string; id: string }) {
     <Link href={href} id={id}>
       <Button
         variant={isActive ? "secondary" : "ghost"}
-        className="w-full text-accent-foreground"
+        className="w-full text-accent-foreground flex justify-start"
       >
         <p className="truncate">{data.title || "Untitled Document"}</p>
       </Button>

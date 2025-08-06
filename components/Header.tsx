@@ -9,6 +9,7 @@ import {
 import { Button } from "./ui/button";
 import Menu from "./Menu";
 import Link from "next/link";
+import Breadcrumbs from "./Breadcrumbs";
 function Header() {
   const { user } = useUser();
 
@@ -30,6 +31,9 @@ function Header() {
           )}
         </Link>
       </div>
+
+      <Breadcrumbs />
+
       <div>
         <SignedOut>
           <SignInButton>

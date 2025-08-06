@@ -19,7 +19,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${poppins.variable} ${montserrat.variable} font-primary antialiased`}
+          className={`${poppins.variable} ${montserrat.variable}  font-primary antialiased`}
         >
           <Header />
           <div className="flex min-h-screen">

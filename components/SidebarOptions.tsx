@@ -68,7 +68,7 @@ function SidebarOptions() {
           My Documents
         </h3>
         {groupedData.owner.length > 0 ? (
-          <ul className="w-full  flex justify-center flex-col gap-2">
+          <ul className="w-full flex justify-center flex-col gap-2">
             {groupedData.owner.map((doc) => (
               <SidebarLinks
                 key={doc.id}
@@ -78,7 +78,7 @@ function SidebarOptions() {
             ))}
           </ul>
         ) : (
-          <div className="w-full p-2 text-accent-foreground/50 text-center">
+          <div className="w-full p-2 text-accent-foreground/50">
             No documents found.
           </div>
         )}
