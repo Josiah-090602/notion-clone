@@ -63,21 +63,48 @@ function SidebarOptions() {
       <NewDocumentButton />
 
       {/***<MyDocuments /> */}
-      {groupedData.owner.length > 0 ? (
-        <ul className="w-full  flex justify-center flex-col gap-2">
-          {groupedData.owner.map((doc) => (
-            <SidebarLinks
-              key={doc.id}
-              href={`/documents/${doc.id}`}
-              id={doc.id}
-            />
-          ))}
-        </ul>
-      ) : (
-        <div className="w-full p-2">No documents found.</div>
-      )}
+      <div>
+        <h3 className="text-md text-accent-foreground/50 font-medium mb-2 mt-5">
+          My Documents
+        </h3>
+        {groupedData.owner.length > 0 ? (
+          <ul className="w-full  flex justify-center flex-col gap-2">
+            {groupedData.owner.map((doc) => (
+              <SidebarLinks
+                key={doc.id}
+                href={`/documents/${doc.id}`}
+                id={doc.id}
+              />
+            ))}
+          </ul>
+        ) : (
+          <div className="w-full p-2 text-accent-foreground/50 text-center">
+            No documents found.
+          </div>
+        )}
+      </div>
 
       {/***<SharedWithMe /> */}
+      <div>
+        <h3 className="text-md text-accent-foreground/50 font-medium mb-2 mt-5">
+          Shared With Me
+        </h3>
+        {groupedData.editor.length > 0 ? (
+          <ul className="w-full  flex justify-center flex-col gap-2">
+            {groupedData.editor.map((doc) => (
+              <SidebarLinks
+                key={doc.id}
+                href={`/documents/${doc.id}`}
+                id={doc.id}
+              />
+            ))}
+          </ul>
+        ) : (
+          <div className="w-full p-2 text-accent-foreground/50 text-center">
+            No documents found.
+          </div>
+        )}
+      </div>
     </>,
   ];
   return (

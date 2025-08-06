@@ -2,8 +2,8 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
+  SheetClose,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -18,7 +18,8 @@ function Menu() {
         <SheetTrigger>
           <MenuIcon />
         </SheetTrigger>
-        <SheetContent side="left" className="w-64">
+
+        <SheetContent side="left" className="w-64 p-2 bg-background">
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
