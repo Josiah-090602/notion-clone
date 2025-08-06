@@ -7,10 +7,8 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Button } from "./ui/button";
-
-import NewDocumentButton from "./NewDocumentButton";
 import Menu from "./Menu";
-
+import Link from "next/link";
 function Header() {
   const { user } = useUser();
 
@@ -18,18 +16,19 @@ function Header() {
     <header className="flex items-center justify-between p-4 bg-gray-800 text-white ">
       <div className="flex items-center gap-5">
         <Menu />
-
-        {user ? (
-          <h2>
-            Welcome to{" "}
-            <span className="font-semibold">
-              {user.firstName} {"'s"}
-            </span>{" "}
-            space!
-          </h2>
-        ) : (
-          <h2>Welcome to Notion Clone</h2>
-        )}
+        <Link href="/">
+          {user ? (
+            <h2>
+              Welcome to{" "}
+              <span className="font-semibold">
+                {user.firstName} {"'s"}
+              </span>{" "}
+              space!
+            </h2>
+          ) : (
+            <h2>Welcome to Notion Clone</h2>
+          )}
+        </Link>
       </div>
       <div>
         <SignedOut>
